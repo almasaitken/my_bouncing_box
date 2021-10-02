@@ -1,0 +1,27 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;">
+  aitken_a </div>
+  <script type="text/javascript">
+    my_bb = document.getElementById("my_bouncing_box");
+    let x_position = 0;
+    let y_position = 0;
+    let x_speed = 1;
+    let y_speed = 1;
+
+    function move() {
+        my_bb.style.left = x_position + 'px';
+        my_bb.style.top = y_position + 'px';
+        x_position += x_speed;
+        y_position += y_speed;
+        if (x_position+my_bb.clientWidth == window.innerWidth || x_position == 0){
+            x_speed *= -1;
+        }
+        if (y_position+my_bb.clientHeight == window.innerHeight || y_position ==0){
+            y_speed *= -1;
+        }
+    }
+
+    setInterval(move, 10);
+
+  </script>
+</html>
